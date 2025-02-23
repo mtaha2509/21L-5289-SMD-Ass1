@@ -16,12 +16,13 @@ public class Splash_Activity extends Activity {
         // Apply animation from XML
         ImageView logo = findViewById(R.id.splash_logo);
         Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.splash_animation);
-        logo.setAnimation(fadeIn);
+        logo.startAnimation(fadeIn);  // Use startAnimation instead of setAnimation
 
         // Move to MainActivity after 3 seconds
         new Handler().postDelayed(() -> {
             startActivity(new Intent(Splash_Activity.this, MainActivity.class));
             finish();
-        }, 2000);
+        }, 5000);
     }
+
 }
